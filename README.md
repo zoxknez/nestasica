@@ -1,4 +1,4 @@
-# Nestašica.rs - Benzinska Apokalipsa 2025 🚗💨
+# Nestašica - Benzinska Apokalipsa 2025 🚗💨
 
 Satirični web sajt o (ne)nestašici benzina u Srbiji 2025.
 
@@ -66,4 +66,4 @@ Napravljeno sa ❤️ i puno ironije
 
 ---
 
-*"Jer pešačenje je novi luksuz!" - Nestašica.rs*
+*"Jer pešačenje je novi luksuz!" - Nestašica*
