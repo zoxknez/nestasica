@@ -49,7 +49,7 @@ const Header = () => {
           />
         </div>
         <p className="mt-2 text-sm sm:text-base md:text-xl italic font-semibold px-2">
-          Jer pešačenje je novi luksuz! 👟✨
+          Jer pešačenje je novi luksuz!(zdravije) 👟✨
         </p>
       </motion.div>
 

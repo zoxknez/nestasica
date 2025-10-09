@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div>
             <h3 className="text-2xl font-display font-bold text-crisis-orange mb-2">
-              🚗💨 NESTAŠICA.RS
+              🚗💨 NESTAŠICA
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Vaš pouzdan (ne)vodič kroz benzinsku apokalipsu 2025. 
