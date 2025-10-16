@@ -7,13 +7,13 @@ const Footer = () => {
   return (
     <footer className="bg-black border-t-4 border-crisis-red py-8">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Logo & Description */}
           <div>
-            <h3 className="text-2xl font-display font-bold text-crisis-orange mb-2">
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-crisis-orange mb-2">
               🚗💨 NESTAŠICA
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
               Vaš pouzdan (ne)vodič kroz benzinsku apokalipsu 2025. 
               Sve informacije su satirične i ne treba ih shvatati ozbiljno.
             </p>
@@ -21,8 +21,8 @@ const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-warning-yellow">Brzi Linkovi</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-base sm:text-lg font-bold mb-4 text-warning-yellow">Brzi Linkovi</h4>
+            <ul className="space-y-2 text-xs sm:text-sm">
               {[
                 'O Nama (ko smo mi?)',
                 'Kontakt (ne odgovaramo)',
@@ -43,11 +43,11 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-warning-yellow">Zaprati Nas</h4>
-            <p className="text-gray-400 text-sm mb-4">
+            <h4 className="text-base sm:text-lg font-bold mb-4 text-warning-yellow">Zaprati Nas</h4>
+            <p className="text-gray-400 text-xs sm:text-sm mb-4">
               Za još apsurdnosti i satiričnog sadržaja!
             </p>
-            <div className="flex gap-6">
+            <div className="flex gap-4 sm:gap-6">
               {[
                 { icon: FaGithub, label: 'GitHub', url: 'https://github.com/zoxknez' },
                 { icon: FaTwitter, label: 'Twitter', url: 'https://x.com/KoronVirus' },
@@ -74,13 +74,13 @@ const Footer = () => {
                       delay: index * 0.2
                     }
                   }}
-                  className="w-16 h-16 bg-gradient-to-br from-crisis-red/30 to-crisis-orange/30 
+                  className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-crisis-red/30 to-crisis-orange/30 
                            hover:from-crisis-red hover:to-crisis-orange rounded-full
-                           flex items-center justify-center border-3 border-crisis-red
+                           flex items-center justify-center border-2 sm:border-3 border-crisis-red
                            transition-all shadow-lg shadow-crisis-red/50"
                   aria-label={social.label}
                 >
-                  <social.icon className="text-3xl" />
+                  <social.icon className="text-2xl sm:text-3xl" />
                 </motion.a>
               ))}
             </div>
@@ -89,8 +89,8 @@ const Footer = () => {
 
         {/* Divider */}
         <div className="border-t border-gray-700 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p className="text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm">
+            <p className="text-gray-400 text-center md:text-left">
               © {currentYear} Nestašica | Sva prava zadržana (kao i sav benzin)
             </p>
             
@@ -109,9 +109,9 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-6 p-4 bg-yellow-900/20 border-2 border-yellow-500 rounded-lg"
+          className="mt-6 p-3 sm:p-4 bg-yellow-900/20 border-2 border-yellow-500 rounded-lg"
         >
-          <p className="text-center text-yellow-300 text-sm">
+          <p className="text-center text-yellow-300 text-xs sm:text-sm leading-relaxed">
             <strong>⚠️ VAŽNO UPOZORENJE:</strong>
             {' '}Ovaj sajt je satiričan i služi isključivo u humorističke svrhe. 
             Sve informacije, podaci i saveti su izmišljeni. 

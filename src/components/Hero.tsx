@@ -22,7 +22,7 @@ const Hero = () => {
       </motion.div>
       
       <motion.p 
-        className="text-2xl md:text-4xl font-bold mb-8"
+        className="text-xl sm:text-2xl md:text-4xl font-bold mb-8 px-2"
         animate={{ opacity: [1, 0.7, 1] }}
         transition={{ duration: 1, repeat: Infinity }}
       >
@@ -33,44 +33,44 @@ const Hero = () => {
         className="max-w-3xl mx-auto glass-effect rounded-2xl p-8 border-4 border-crisis-red"
         whileHover={{ scale: 1.02 }}
       >
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <FaExclamationCircle className="text-4xl text-warning-yellow animate-bounce" />
-          <h3 className="text-3xl font-bold text-warning-yellow">TRENUTNO STANJE: KRITIČNO</h3>
-          <FaExclamationCircle className="text-4xl text-warning-yellow animate-bounce" />
+        <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
+          <FaExclamationCircle className="text-2xl sm:text-3xl md:text-4xl text-warning-yellow animate-bounce flex-shrink-0" />
+          <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-warning-yellow text-center">TRENUTNO STANJE: KRITIČNO</h3>
+          <FaExclamationCircle className="text-2xl sm:text-3xl md:text-4xl text-warning-yellow animate-bounce flex-shrink-0" />
         </div>
         
-        <div className="space-y-4 text-lg md:text-xl">
+        <div className="space-y-4 text-sm sm:text-base md:text-lg lg:text-xl">
           <motion.div 
-            className="bg-red-900/30 p-4 rounded-lg border-2 border-red-500"
+            className="bg-red-900/30 p-3 sm:p-4 rounded-lg border-2 border-red-500"
             whileHover={{ scale: 1.05 }}
           >
             <p className="font-semibold">
               ⏰ Prosečno vreme čekanja: 
-              <span className="text-3xl text-crisis-orange font-bold ml-2" id="hero-wait-time">
+              <span className="block sm:inline text-2xl sm:text-3xl text-crisis-orange font-bold sm:ml-2 mt-1 sm:mt-0" id="hero-wait-time">
                 18h 42min
               </span>
             </p>
           </motion.div>
           
           <motion.div 
-            className="bg-red-900/30 p-4 rounded-lg border-2 border-red-500"
+            className="bg-red-900/30 p-3 sm:p-4 rounded-lg border-2 border-red-500"
             whileHover={{ scale: 1.05 }}
           >
             <p className="font-semibold">
               💰 Cena na crnom tržištu: 
-              <span className="text-3xl text-warning-yellow font-bold ml-2" id="hero-black-price">
+              <span className="block sm:inline text-2xl sm:text-3xl text-warning-yellow font-bold sm:ml-2 mt-1 sm:mt-0" id="hero-black-price">
                 450 din/l
               </span>
             </p>
           </motion.div>
           
           <motion.div 
-            className="bg-red-900/30 p-4 rounded-lg border-2 border-red-500"
+            className="bg-red-900/30 p-3 sm:p-4 rounded-lg border-2 border-red-500"
             whileHover={{ scale: 1.05 }}
           >
             <p className="font-semibold">
               🚗 Automobila u redovima širom Srbije: 
-              <span className="text-3xl text-red-400 font-bold ml-2">
+              <span className="block sm:inline text-2xl sm:text-3xl text-red-400 font-bold sm:ml-2 mt-1 sm:mt-0">
                 15,847
               </span>
             </p>

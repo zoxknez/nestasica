@@ -149,15 +149,15 @@ const SmugglersMap = () => {
           <p className="text-lg text-gray-300">Pronađi najbližu Pumpaj tačku... ili ne</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Legenda */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-black/30 p-6 rounded-xl border-2 border-white/20"
+            className="bg-black/30 p-4 sm:p-6 rounded-xl border-2 border-white/20"
           >
-            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2">
               <FaMapMarkerAlt className="text-crisis-red" />
               Legenda
             </h3>
@@ -193,8 +193,8 @@ const SmugglersMap = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="md:col-span-2 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl 
-                     border-4 border-white/20 p-8 relative overflow-hidden min-h-[400px]
+            className="lg:col-span-2 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl 
+                     border-4 border-white/20 p-4 sm:p-8 relative overflow-hidden min-h-[350px] sm:min-h-[400px]
                      flex items-center justify-center"
           >
             {/* Fake mapa sa tačkama */}
@@ -321,12 +321,13 @@ const SmugglersMap = () => {
                        border-4 border-blue-500 shadow-2xl"
             >
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-blue-300">
-                  {selectedLocation.icon} {selectedLocation.name}
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-300 flex-1 pr-2">
+                  <span className="mr-2">{selectedLocation.icon}</span>
+                  <span className="break-words">{selectedLocation.name}</span>
                 </h3>
                 <button
                   onClick={() => setSelectedLocation(null)}
-                  className="text-white hover:text-red-400 text-2xl transition-colors"
+                  className="text-white hover:text-red-400 text-xl sm:text-2xl transition-colors flex-shrink-0"
                 >
                   ✕
                 </button>
@@ -334,36 +335,36 @@ const SmugglersMap = () => {
 
               <p className="text-gray-300 mb-4 italic">{selectedLocation.description}</p>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                <div className="bg-black/30 p-3 rounded-lg text-center">
-                  <FaDollarSign className="text-2xl text-green-400 mx-auto mb-1" />
-                  <div className="text-sm text-gray-400">Cena</div>
-                  <div className="text-xl font-bold text-green-400">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4">
+                <div className="bg-black/30 p-2 sm:p-3 rounded-lg text-center">
+                  <FaDollarSign className="text-xl sm:text-2xl text-green-400 mx-auto mb-1" />
+                  <div className="text-xs sm:text-sm text-gray-400">Cena</div>
+                  <div className="text-sm sm:text-lg md:text-xl font-bold text-green-400 break-words">
                     {selectedLocation.price > 0 ? `${selectedLocation.price} din/l` : 'N/A'}
                   </div>
                 </div>
 
-                <div className="bg-black/30 p-3 rounded-lg text-center">
-                  <FaCar className="text-2xl text-yellow-400 mx-auto mb-1" />
-                  <div className="text-sm text-gray-400">Red</div>
-                  <div className="text-xl font-bold text-yellow-400">
+                <div className="bg-black/30 p-2 sm:p-3 rounded-lg text-center">
+                  <FaCar className="text-xl sm:text-2xl text-yellow-400 mx-auto mb-1" />
+                  <div className="text-xs sm:text-sm text-gray-400">Red</div>
+                  <div className="text-sm sm:text-lg md:text-xl font-bold text-yellow-400">
                     {selectedLocation.queue} auta
                   </div>
                 </div>
 
-                <div className="bg-black/30 p-3 rounded-lg text-center">
-                  <FaClock className="text-2xl text-blue-400 mx-auto mb-1" />
-                  <div className="text-sm text-gray-400">Dostupno</div>
-                  <div className="text-xl font-bold text-blue-400">
+                <div className="bg-black/30 p-2 sm:p-3 rounded-lg text-center">
+                  <FaClock className="text-xl sm:text-2xl text-blue-400 mx-auto mb-1" />
+                  <div className="text-xs sm:text-sm text-gray-400">Dostupno</div>
+                  <div className="text-sm sm:text-lg md:text-xl font-bold text-blue-400">
                     {selectedLocation.available}L
                   </div>
                 </div>
 
                 {selectedLocation.phone && (
-                  <div className="bg-black/30 p-3 rounded-lg text-center">
-                    <FaPhone className="text-2xl text-purple-400 mx-auto mb-1" />
-                    <div className="text-sm text-gray-400">Kontakt</div>
-                    <div className="text-sm font-bold text-purple-400">
+                  <div className="bg-black/30 p-2 sm:p-3 rounded-lg text-center col-span-2 lg:col-span-1">
+                    <FaPhone className="text-xl sm:text-2xl text-purple-400 mx-auto mb-1" />
+                    <div className="text-xs sm:text-sm text-gray-400">Kontakt</div>
+                    <div className="text-xs sm:text-sm font-bold text-purple-400 break-all">
                       {selectedLocation.phone}
                     </div>
                   </div>
@@ -377,7 +378,7 @@ const SmugglersMap = () => {
                   className="text-center"
                 >
                   <a href="#buy-from-smuggler">
-                    <button className="crisis-button w-full text-xl">
+                    <button className="crisis-button w-full text-base sm:text-lg md:text-xl">
                       💰 KUPI OVDE - {selectedLocation.price} din/l
                     </button>
                   </a>
@@ -395,7 +396,7 @@ const SmugglersMap = () => {
           transition={{ delay: 0.3 }}
           className="mt-8 bg-black/40 p-6 rounded-xl border-2 border-yellow-500"
         >
-          <h3 className="text-xl font-bold mb-4 text-yellow-400 flex items-center gap-2">
+          <h3 className="text-lg sm:text-xl font-bold mb-4 text-yellow-400 flex items-center gap-2">
             <motion.span
               animate={{ opacity: [1, 0.3, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -404,7 +405,7 @@ const SmugglersMap = () => {
             </motion.span>
             LIVE: Izveštaji sa terena
           </h3>
-          <div className="space-y-2 text-sm max-h-40 overflow-y-auto">
+          <div className="space-y-2 text-xs sm:text-sm max-h-40 overflow-y-auto">
             {locations.map((loc, index) => (
               <motion.p
                 key={loc.id}

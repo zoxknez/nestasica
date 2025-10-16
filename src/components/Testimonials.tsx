@@ -75,7 +75,7 @@ const Testimonials = () => {
           <p className="text-sm text-gray-400 italic mt-2">(možda)</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -119,7 +119,7 @@ const Testimonials = () => {
 
               {/* Text */}
               <div className="relative z-10">
-                <p className="text-gray-100 italic mb-4 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-100 italic mb-4 leading-relaxed">
                   "{testimonial.text}"
                 </p>
 
@@ -156,10 +156,10 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.8 }}
-          className="mt-8 text-center"
+          className="mt-8 text-center px-4"
         >
-          <div className="bg-black/40 p-6 rounded-xl border-2 border-crisis-orange inline-block">
-            <h3 className="text-xl font-bold mb-2">Imaš svoju priču?</h3>
+          <div className="bg-black/40 p-4 sm:p-6 rounded-xl border-2 border-crisis-orange inline-block max-w-full">
+            <h3 className="text-lg sm:text-xl font-bold mb-2">Imaš svoju priču?</h3>
             <p className="text-gray-300 mb-4">Podeli svoje iskustvo iz reda!</p>
             <motion.button
               whileHover={{ scale: 1.1 }}

@@ -77,7 +77,7 @@ const Statistics = () => {
 
   // Bar chart data - Vreme čekanja po gradovima
   const waitTimeData = {
-    labels: ['Beograd', 'Novi Sad', 'Niš', 'Kragujevac', 'Subotica', 'Pančevo'],
+    labels: ['BG', 'NS', 'NI', 'KG', 'SU', 'PA'],
     datasets: [
       {
         label: 'Prosečno vreme (sati)',
@@ -105,7 +105,7 @@ const Statistics = () => {
 
   // Doughnut chart data - Transport alternatives
   const transportData = {
-    labels: ['Automobil (kad ima goriva)', 'Bicikl', 'Pešice', 'Autobus', 'Ostalo'],
+    labels: ['Auto', 'Bicikl', 'Pešice', 'Bus', 'Ostalo'],
     datasets: [
       {
         label: 'Način prevoza',
@@ -134,18 +134,37 @@ const Statistics = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
+        display: true,
+        position: 'top' as const,
         labels: {
           color: '#fff',
+          font: {
+            size: 11,
+          },
+          padding: 10,
+          boxWidth: 15,
         },
       },
     },
     scales: {
       y: {
-        ticks: { color: '#fff' },
+        ticks: { 
+          color: '#fff',
+          font: {
+            size: 10,
+          },
+        },
         grid: { color: 'rgba(255, 255, 255, 0.1)' },
       },
       x: {
-        ticks: { color: '#fff' },
+        ticks: { 
+          color: '#fff',
+          font: {
+            size: 10,
+          },
+          maxRotation: 0,
+          minRotation: 0,
+        },
         grid: { color: 'rgba(255, 255, 255, 0.1)' },
       },
     },
@@ -159,9 +178,21 @@ const Statistics = () => {
         position: 'bottom' as const,
         labels: {
           color: '#fff',
-          padding: 15,
+          padding: 8,
+          font: {
+            size: 11,
+          },
+          boxWidth: 15,
         },
       },
+      tooltip: {
+        callbacks: {
+          label: function(context: any) {
+            const fullLabels = ['Auto (kad ima)', 'Bicikl', 'Pešice', 'Bus', 'Ostalo'];
+            return fullLabels[context.dataIndex] + ': ' + context.parsed + '%';
+          }
+        }
+      }
     },
   }
 
@@ -216,10 +247,10 @@ const Statistics = () => {
               >
                 {stat.icon}
               </motion.div>
-              <h3 className="text-4xl md:text-5xl font-bold text-warning-yellow mb-2">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-warning-yellow mb-2">
                 {stat.number}
               </h3>
-              <p className="text-sm text-gray-200">{stat.label}</p>
+              <p className="text-xs sm:text-sm text-gray-200">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -233,7 +264,7 @@ const Statistics = () => {
             viewport={{ once: true }}
             className="bg-black/30 p-6 rounded-xl border-2 border-white/20"
           >
-            <h3 className="text-2xl font-bold mb-4 text-center">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-center">
               📈 Uporedni pregled cena (2025)
             </h3>
             <div className="h-64 md:h-80">
@@ -245,17 +276,20 @@ const Statistics = () => {
           </motion.div>
 
           {/* Two column charts */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Wait time by city */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-black/30 p-6 rounded-xl border-2 border-white/20"
+              className="bg-black/30 p-4 md:p-6 rounded-xl border-2 border-white/20"
             >
-              <h3 className="text-2xl font-bold mb-4 text-center">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-center">
                 ⏰ Vreme čekanja po gradovima
               </h3>
+              <p className="text-xs text-center text-gray-400 mb-3">
+                BG=Beograd, NS=Novi Sad, NI=Niš, KG=Kragujevac, SU=Subotica, PA=Pančevo
+              </p>
               <div className="h-64 md:h-80">
                 <Bar data={waitTimeData} options={chartOptions} />
               </div>
@@ -267,9 +301,9 @@ const Statistics = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-black/30 p-6 rounded-xl border-2 border-white/20"
+              className="bg-black/30 p-4 md:p-6 rounded-xl border-2 border-white/20"
             >
-              <h3 className="text-2xl font-bold mb-4 text-center">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-center">
                 🚶 Načini prevoza (2025)
               </h3>
               <div className="h-64 md:h-80">

@@ -101,7 +101,7 @@ const SurvivalTips = () => {
         </div>
 
         {/* Glavni saveti grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {tips.map((tip, index) => (
             <motion.div
               key={index}
@@ -113,9 +113,9 @@ const SurvivalTips = () => {
               className={`bg-gradient-to-br ${tip.color} rounded-xl p-6 border-2 border-white/20 
                          shadow-xl card-hover`}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <tip.icon className={`text-4xl ${tip.iconColor}`} />
-                <h3 className="text-xl font-bold">{tip.title}</h3>
+              <div className="flex items-center gap-2 sm:gap-3 mb-4">
+                <tip.icon className={`text-3xl sm:text-4xl ${tip.iconColor} flex-shrink-0`} />
+                <h3 className="text-lg sm:text-xl font-bold">{tip.title}</h3>
               </div>
               <ul className="space-y-2">
                 {tip.items.map((item, i) => (
@@ -137,7 +137,7 @@ const SurvivalTips = () => {
         </div>
 
         {/* Pro Tips - posebna sekcija */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {proTips.map((tip, index) => (
             <motion.div
               key={index}

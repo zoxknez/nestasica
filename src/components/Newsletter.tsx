@@ -66,11 +66,11 @@ const Newsletter = () => {
           <FaBell className="text-6xl md:text-8xl text-crisis-orange" />
         </motion.div>
 
-        <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 px-2">
           📧 PRIJAVI SE ZA NESTAŠICA ALERT!
         </h2>
         
-        <p className="text-lg md:text-xl text-gray-300 mb-2">
+        <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-2 px-2">
           Budi prvi koji sazna kada se pojavi benzin
         </p>
         
@@ -114,7 +114,7 @@ const Newsletter = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-8 grid md:grid-cols-3 gap-4 text-left"
+          className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left"
         >
           {[
             { icon: '⚡', text: 'Instant obaveštenja (možda)' },
@@ -124,11 +124,11 @@ const Newsletter = () => {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05, x: 10 }}
-              className="bg-black/30 p-4 rounded-lg border-2 border-white/20
-                       flex items-center gap-3 card-hover"
+              className="bg-black/30 p-3 sm:p-4 rounded-lg border-2 border-white/20
+                       flex items-center gap-2 sm:gap-3 card-hover"
             >
-              <span className="text-3xl">{benefit.icon}</span>
-              <span className="text-sm">{benefit.text}</span>
+              <span className="text-2xl sm:text-3xl flex-shrink-0">{benefit.icon}</span>
+              <span className="text-xs sm:text-sm">{benefit.text}</span>
             </motion.div>
           ))}
         </motion.div>

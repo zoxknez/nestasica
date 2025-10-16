@@ -124,7 +124,7 @@ const BuyFromSmuggler = () => {
 
         {/* Packages Grid */}
         {!showOrderForm && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {packages.map((pkg, index) => (
               <motion.div
                 key={pkg.id}
@@ -157,12 +157,12 @@ const BuyFromSmuggler = () => {
                 )}
 
                 <div className="text-center mb-4">
-                  <FaGasPump className="text-5xl text-crisis-orange mx-auto mb-3" />
-                  <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
+                  <FaGasPump className="text-4xl sm:text-5xl text-crisis-orange mx-auto mb-3" />
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">{pkg.name}</h3>
                 </div>
 
                 <div className="text-center mb-4">
-                  <div className="text-4xl font-bold text-warning-yellow mb-2">
+                  <div className="text-3xl sm:text-4xl font-bold text-warning-yellow mb-2">
                     {pkg.liters}L
                   </div>
                   {pkg.discount && (
@@ -170,10 +170,10 @@ const BuyFromSmuggler = () => {
                       -{pkg.discount}% POPUST!
                     </div>
                   )}
-                  <div className="text-3xl font-bold text-green-400">
+                  <div className="text-2xl sm:text-3xl font-bold text-green-400">
                     {pkg.price.toLocaleString()} RSD
                   </div>
-                  <div className="text-sm text-gray-400 mt-1">
+                  <div className="text-xs sm:text-sm text-gray-400 mt-1">
                     ({(pkg.price / pkg.liters).toFixed(0)} din/l)
                   </div>
                 </div>
@@ -198,18 +198,18 @@ const BuyFromSmuggler = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              className="bg-gradient-to-br from-red-900/30 to-orange-900/30 p-8 rounded-xl 
+              className="bg-gradient-to-br from-red-900/30 to-orange-900/30 p-4 sm:p-6 md:p-8 rounded-xl 
                        border-4 border-crisis-red"
             >
-              <h3 className="text-3xl font-bold mb-6 text-center">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center break-words">
                 Potvrdi Narudžbinu: {selectedPackage?.name}
               </h3>
 
               <div className="bg-black/40 p-4 rounded-lg mb-6 text-center">
-                <div className="text-5xl font-bold text-warning-yellow mb-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-warning-yellow mb-2">
                   {selectedPackage?.liters}L
                 </div>
-                <div className="text-2xl font-bold text-green-400">
+                <div className="text-xl sm:text-2xl font-bold text-green-400">
                   {selectedPackage?.price.toLocaleString()} RSD
                 </div>
               </div>
@@ -272,14 +272,14 @@ const BuyFromSmuggler = () => {
                   </p>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <motion.button
                     type="button"
                     onClick={resetForm}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-1 px-6 py-3 bg-gray-600 hover:bg-gray-500 text-white 
-                             font-bold rounded-lg transition-all"
+                    className="flex-1 px-4 sm:px-6 py-3 bg-gray-600 hover:bg-gray-500 text-white 
+                             font-bold rounded-lg transition-all text-sm sm:text-base"
                   >
                     ODUSTANI
                   </motion.button>
@@ -288,10 +288,11 @@ const BuyFromSmuggler = () => {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-1 crisis-button text-xl"
+                    className="flex-1 crisis-button text-base sm:text-lg md:text-xl"
                   >
                     <FaMoneyBillWave className="inline mr-2" />
-                    POTVRDI NARUDŽBINU
+                    <span className="hidden sm:inline">POTVRDI NARUDŽBINU</span>
+                    <span className="sm:hidden">POTVRDI</span>
                   </motion.button>
                 </div>
               </form>
@@ -306,17 +307,17 @@ const BuyFromSmuggler = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
-              className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 p-8 rounded-xl 
+              className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 p-4 sm:p-6 md:p-8 rounded-xl 
                        border-4 border-green-500 text-center"
             >
               <motion.div
                 animate={{ rotate: 360, scale: [1, 1.2, 1] }}
                 transition={{ duration: 0.6 }}
               >
-                <FaCheckCircle className="text-8xl text-green-400 mx-auto mb-4" />
+                <FaCheckCircle className="text-6xl sm:text-7xl md:text-8xl text-green-400 mx-auto mb-4" />
               </motion.div>
 
-              <h3 className="text-4xl font-bold mb-4 text-green-300">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-green-300">
                 Narudžbina Poslata! 🎉
               </h3>
 
@@ -324,11 +325,11 @@ const BuyFromSmuggler = () => {
                 Šverceri će te kontaktirati uskoro...
               </p>
 
-              <div className="bg-black/40 p-6 rounded-lg mb-6">
-                <p className="text-lg mb-2">📦 Paket: <strong>{selectedPackage?.name}</strong></p>
-                <p className="text-lg mb-2">⛽ Količina: <strong>{selectedPackage?.liters}L</strong></p>
-                <p className="text-lg mb-2">💰 Iznos: <strong>{selectedPackage?.price.toLocaleString()} RSD</strong></p>
-                <p className="text-lg">📍 Lokacija: <strong>{location}</strong></p>
+              <div className="bg-black/40 p-4 sm:p-6 rounded-lg mb-6">
+                <p className="text-sm sm:text-base md:text-lg mb-2 break-words">📦 Paket: <strong>{selectedPackage?.name}</strong></p>
+                <p className="text-sm sm:text-base md:text-lg mb-2">⛽ Količina: <strong>{selectedPackage?.liters}L</strong></p>
+                <p className="text-sm sm:text-base md:text-lg mb-2">💰 Iznos: <strong>{selectedPackage?.price.toLocaleString()} RSD</strong></p>
+                <p className="text-sm sm:text-base md:text-lg break-words">📍 Lokacija: <strong>{location}</strong></p>
               </div>
 
               <div className="bg-red-900/30 border-2 border-red-500 p-4 rounded-lg mb-6">
@@ -357,7 +358,7 @@ const BuyFromSmuggler = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-8 grid md:grid-cols-3 gap-4"
+            className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4"
           >
             {[
               { icon: '🚚', title: 'Brza Dostava', text: 'Isporuka u roku od 2-48h' },
